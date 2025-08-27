@@ -4,71 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orthogonal Array Walkthrough — L25 (5^6)</title>
-  <style>
-    :root{
-      --bg:#0f1320; --panel:#161b2e; --panel-2:#1d2440; --text:#e8ecf5; --muted:#aab3d1;
-      --accent:#7cc4ff; --accent-2:#8be28b; --warn:#ffcf66; --danger:#ff7a7a; --line:#2a3358;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      --radius: 10px;
-    }
-    *{box-sizing: border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui, Segoe UI, Roboto, Helvetica, Arial}
-    a{color:var(--accent)}
-    header{
-      position:sticky;top:0;z-index:10;background:linear-gradient(180deg, rgba(15,19,32,.95), rgba(15,19,32,.6));
-      backdrop-filter: blur(6px); border-bottom:1px solid var(--line);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:16px}
-    .title{display:flex;align-items:center;gap:12px}
-    .title h1{margin:0;font-size:18px;font-weight:600}
-    .title small{color:var(--muted)}
-
-    main{padding:18px}
-    section{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin:16px auto;max-width:1100px}
-    section>header{display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border-bottom:1px solid var(--line);padding:10px 14px;border-top-left-radius:var(--radius);border-top-right-radius:var(--radius)}
-    section>header h2{margin:0;font-size:16px}
-    section .content{padding:14px}
-
-    .grid{display:grid;gap:10px}
-    .cols-2{grid-template-columns:1fr 1fr}
-    .cols-3{grid-template-columns:repeat(3, 1fr)}
-    @media (max-width:900px){.cols-2,.cols-3{grid-template-columns:1fr}}
-
-    .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .grow{flex:1}
-    .muted{color:var(--muted)}
-
-    input[type=text], input[type=number], select, textarea{
-      background:#0d1120;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px;
-    }
-    input[type=number]{width:100px}
-    label{font-size:12px;color:var(--muted)}
-    .card{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:12px}
-    .card h4{margin:0 0 6px 0}
-
-    table{width:100%;border-collapse:collapse;}
-    th, td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:middle}
-    th{color:#cdd6f8;font-weight:600;background:rgba(255,255,255,0.02)}
-    tbody tr:hover{background:rgba(255,255,255,0.03)}
-
-    button{border:1px solid var(--line);background:#0e1530;color:var(--text);padding:8px 10px;border-radius:8px;cursor:pointer}
-    button.primary{background:linear-gradient(180deg,#1c6cff,#0a51d6);border-color:#0a51d6}
-    button.ghost{background:transparent}
-    button.icon{display:inline-flex;align-items:center;gap:6px}
-    button + button{margin-left:8px}
-
-    .toolbar{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:12px}
-    .pill{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;background:#0d1328;border:1px solid var(--line);border-radius:999px;font-size:12px}
-    .code{font-family:var(--mono);font-size:12px;background:#0a0f20;border:1px solid var(--line);padding:4px 6px;border-radius:6px}
-
-    .chart{width:100%;height:140px;border:1px solid var(--line);border-radius:8px;background:#0b1228}
-    .flex{display:flex;gap:10px;align-items:stretch}
-    .flex > *{flex:1}
-
-    .hint{font-size:12px;color:var(--muted)}
-    .notice{padding:8px 10px;border:1px dashed var(--line);border-radius:8px;background:#0c1022;color:var(--muted)}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
@@ -140,7 +76,8 @@
     </section>
   </main>
 
-  <script>
+  <!-- Inline script moved to app.js -->
+  <script type="application/disabled">
     // ---------- Utilities ----------
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
@@ -577,5 +514,6 @@
     // Initial render
     renderDesign();
   </script>
+  <script src="app.js" defer></script>
 </body>
 </html>
