@@ -442,7 +442,7 @@
 
     function renderKpiAnalysis(kpi, grand, perFactor, contribRows, yhat, SS_total, SS_error, df_error){
       const mainEffects = perFactor.map(p=>{
-        const levels = p.means.map((m,i)=>({ level: i+1, mean: m }));
+        const levels = p.means.map((m,i)=>({ level: i+1, label: design[p.fIndex].levels[i], mean: m }));
         const chart = sparklineSVG(levels.map(x=>x.mean));
         const bestLbl = `${design[p.fIndex].levels[p.bestIndex]} (L${p.bestIndex+1})`;
         return `
@@ -452,9 +452,9 @@
               <div>
                 <div class="hint">Level means</div>
                 <table>
-                  <thead><tr><th>Level</th><th>Mean</th></tr></thead>
+                  <thead><tr><th>Level</th><th>Setting</th><th>Mean</th></tr></thead>
                   <tbody>
-                    ${levels.map(l=>`<tr><td>L${l.level}</td><td>${l.mean.toFixed(4)}</td></tr>`).join('')}
+                    ${levels.map(l=>`<tr><td>L${l.level}</td><td>${escapeHtml(l.label)}</td><td>${l.mean.toFixed(4)}</td></tr>`).join('')}
                   </tbody>
                 </table>
                 <div class="hint" style="margin-top:6px">Best level (${kpi.objective}): <b>${escapeHtml(bestLbl)}</b></div>
@@ -579,4 +579,3 @@
   </script>
 </body>
 </html>
-
